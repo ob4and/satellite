@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+    
+    <title>satellite</title>
+    
+    <link rel="icon" href="satellite/img/satellite_symbol.svg" type="image/x-icon">
+        
+    <link rel="stylesheet" href="satellite/css/reset.css">
+    <link rel="stylesheet" href="satellite/css/intro.css">
+    <link rel="stylesheet" href="satellite/css/mobile.css">
+</head>
+<body>
+    <canvas>
+    </canvas>
+    
+    <p class="loding">loding</p>
+    <a href="satellite/main.html" class="enter">enter <span>→</span></a>
+
+    <div class="loading-bar">
+    </div>
+
+    <div class="mobile">
+        <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
+            <path d="M55.1289 130.963C42.7022 130.963 32.9837 126.45 27.763 118.258C24.8593 113.701 23.4311 108.237 23.5141 102.015C23.5911 96.0681 25.0548 89.7244 27.8637 83.1348C60.6311 88.0474 70.72 96.7733 76.0711 127.247C76.4 127.138 76.7259 127.022 77.0548 126.907C79.5733 126.018 82.077 124.999 84.563 123.852C89.8844 97.1141 99.8667 88.483 128.803 83.6622C129.659 82.1215 130.456 80.5659 131.185 78.9985C131.517 78.2844 131.834 77.5733 132.136 76.8652C99.3689 71.9526 89.28 63.2267 83.9289 32.7526C91.197 30.2874 98.24 29.037 104.871 29.037C117.298 29.037 127.016 33.5496 132.237 41.7452C135.141 46.3022 136.569 51.7659 136.486 57.9852C136.409 63.9319 134.945 70.2756 132.136 76.8652C132.93 76.9837 133.739 77.0993 134.56 77.2148C146.243 49.0548 133.393 26.6667 104.871 26.6667C97.9467 26.6667 90.717 27.9852 83.5289 30.3881C82.16 21.9556 81.0993 11.9407 80 0C78.7704 13.3511 77.5882 24.2963 75.9733 33.3126C56.4178 41.917 38.1007 58.0593 28.2519 76.8059C20.2756 78.0148 10.9452 78.9926 0 80C9.68593 80.8918 18.1037 81.76 25.44 82.7852C13.757 110.945 26.6074 133.333 55.1289 133.333C62.0533 133.333 69.283 132.015 76.4711 129.612C76.3407 128.809 76.2074 128.021 76.0711 127.247C68.803 129.716 61.76 130.963 55.1289 130.963ZM61.2089 44.2459C65.84 41.0874 70.6044 38.3793 75.437 36.1481C70.1156 62.8859 60.1333 71.517 31.197 76.3378C37.917 64.2311 48.4148 52.9719 61.2089 44.2459Z" fill="black"/>
+            <path d="M98.7911 115.754C94.16 118.913 89.3955 121.624 84.563 123.852C84.3792 124.776 84.2015 125.721 84.0267 126.687C103.582 118.083 121.899 101.941 131.748 83.1941C130.744 83.3452 129.763 83.5022 128.803 83.6622C122.083 95.7718 111.585 107.028 98.7911 115.754Z" fill="black"/>
+            <path d="M80 160C81.2296 146.649 82.4118 135.704 84.0267 126.687C81.523 127.793 78.9985 128.77 76.4711 129.612C77.84 138.044 78.9007 148.059 80 160Z" fill="black"/>
+            <path d="M134.56 77.2148C134.178 78.1363 133.769 79.0667 133.333 80C132.833 81.0726 132.305 82.1363 131.748 83.1941C139.724 81.9852 149.055 81.0074 160 80C150.314 79.1081 141.896 78.24 134.56 77.2148Z" fill="black"/>
+            <path d="M139.778 14.1955C141.399 12.5748 144.027 12.5778 145.653 14.2044C149.399 18.2607 143.84 23.8163 139.787 20.0711C138.163 18.4474 138.16 15.8163 139.778 14.1955Z" fill="black"/>
+          </svg>
+
+        <p class="kr">
+            본 사이트는 <span>포트폴리용 데모</span>로, <br>
+            모바일 환경은 지원하지 않습니다. <br>
+            PC에서만 정상적으로 확인하실 수 있습니다.
+        </p>
+    </div>
+
+    <!-- script -->    
+    <script type="x-shader/x-fragment" id="vertShader">
+        precision highp float;
+    
+        varying vec2 vUv;
+        attribute vec2 a_position;
+    
+        varying vec2 vL;
+        varying vec2 vR;
+        varying vec2 vT;
+        varying vec2 vB;
+        uniform vec2 u_texel;
+    
+        void main () {
+            vUv = .5 * (a_position + 1.);
+            vL = vUv - vec2(u_texel.x, 0.);
+            vR = vUv + vec2(u_texel.x, 0.);
+            vT = vUv + vec2(0., u_texel.y);
+            vB = vUv - vec2(0., u_texel.y);
+            gl_Position = vec4(a_position, 0., 1.);
+        }
+    </script>
+    <script type="x-shader/x-fragment" id="fragShaderAdvection">
+        precision highp float;
+        precision highp sampler2D;
+    
+        varying vec2 vUv;
+        uniform sampler2D u_velocity_texture;
+        uniform sampler2D u_input_texture;
+        uniform vec2 u_texel;
+        uniform float u_dt;
+        uniform float u_use_text;
+        uniform sampler2D u_text_texture;
+    
+        vec4 bilerp (sampler2D sam, vec2 uv, vec2 tsize) {
+            vec2 st = uv / tsize - 0.5;
+    
+            vec2 iuv = floor(st);
+            vec2 fuv = fract(st);
+    
+            vec4 a = texture2D(sam, (iuv + vec2(0.5, 0.5)) * tsize);
+            vec4 b = texture2D(sam, (iuv + vec2(1.5, 0.5)) * tsize);
+            vec4 c = texture2D(sam, (iuv + vec2(0.5, 1.5)) * tsize);
+            vec4 d = texture2D(sam, (iuv + vec2(1.5, 1.5)) * tsize);
+    
+            return mix(mix(a, b, fuv.x), mix(c, d, fuv.x), fuv.y);
+        }
+    
+        void main () {
+            vec2 coord = vUv - u_dt * bilerp(u_velocity_texture, vUv, u_texel).xy * u_texel;
+            float text = texture2D(u_text_texture, vec2(vUv.x, 1. - vUv.y)).r;
+            float dissipation = (.96 + text * .04 * u_use_text);
+    
+            gl_FragColor = dissipation * bilerp(u_input_texture, coord, u_texel);
+            gl_FragColor.a = 1.;
+        }
+    </script>
+    <script type="x-shader/x-fragment" id="fragShaderDivergence">
+        precision highp float;
+        precision highp sampler2D;
+    
+        varying highp vec2 vUv;
+        varying highp vec2 vL;
+        varying highp vec2 vR;
+        varying highp vec2 vT;
+        varying highp vec2 vB;
+        uniform sampler2D u_velocity_texture;
+    
+        void main () {
+            float L = texture2D(u_velocity_texture, vL).x;
+            float R = texture2D(u_velocity_texture, vR).x;
+            float T = texture2D(u_velocity_texture, vT).y;
+            float B = texture2D(u_velocity_texture, vB).y;
+    
+            float div = .6 * (R - L + T - B);
+            gl_FragColor = vec4(div, 0., 0., 1.);
+        }
+    </script>
+    <script type="x-shader/x-fragment" id="fragShaderPressure">
+        precision highp float;
+        precision highp sampler2D;
+    
+        varying highp vec2 vUv;
+        varying highp vec2 vL;
+        varying highp vec2 vR;
+        varying highp vec2 vT;
+        varying highp vec2 vB;
+        uniform sampler2D u_pressure_texture;
+        uniform sampler2D u_divergence_texture;
+        uniform sampler2D u_text_texture;
+    
+        void main () {
+    
+            float text = texture2D(u_text_texture, vec2(vUv.x, 1. - vUv.y)).r;
+    
+            float L = texture2D(u_pressure_texture, vL).x;
+            float R = texture2D(u_pressure_texture, vR).x;
+            float T = texture2D(u_pressure_texture, vT).x;
+            float B = texture2D(u_pressure_texture, vB).x;
+            float C = texture2D(u_pressure_texture, vUv).x;
+            float divergence = texture2D(u_divergence_texture, vUv).x;
+    
+            float pressure = (L + R + B + T - divergence) * 0.1;
+            pressure += (.2 * text);
+    
+            gl_FragColor = vec4(pressure, 0., 0., 1.);
+        }
+    </script>
+    <script type="x-shader/x-fragment" id="fragShaderGradientSubtract">
+        precision highp float;
+        precision highp sampler2D;
+    
+        varying highp vec2 vUv;
+        varying highp vec2 vL;
+        varying highp vec2 vR;
+        varying highp vec2 vT;
+        varying highp vec2 vB;
+        uniform sampler2D u_pressure_texture;
+        uniform sampler2D u_velocity_texture;
+    
+        uniform sampler2D u_text_texture;
+    
+        void main () {
+            float L = texture2D(u_pressure_texture, vL).x;
+            float R = texture2D(u_pressure_texture, vR).x;
+            float T = texture2D(u_pressure_texture, vT).x;
+            float B = texture2D(u_pressure_texture, vB).x;
+            vec2 velocity = texture2D(u_velocity_texture, vUv).xy;
+            velocity.xy -= vec2(R - L, T - B);
+            gl_FragColor = vec4(velocity, 0., 1.);
+        }
+    </script>
+    <script type="x-shader/x-fragment" id="fragShaderPoint">
+        precision highp float;
+        precision highp sampler2D;
+    
+        varying vec2 vUv;
+        uniform sampler2D u_input_texture;
+        uniform float u_ratio;
+        uniform vec3 u_point_value;
+        uniform vec2 u_point;
+        uniform float u_point_size;
+    
+        uniform sampler2D u_text_texture;
+    
+    
+        void main () {
+            vec2 p = vUv - u_point.xy;
+            p.x *= u_ratio;
+            vec3 splat = pow(2., -dot(p, p) / u_point_size) * u_point_value;
+    
+            float text = texture2D(u_text_texture, vec2(vUv.x, 1. - vUv.y)).r;
+            splat *= (.7 + .2 * text);
+    
+            vec3 base = texture2D(u_input_texture, vUv).xyz;
+            gl_FragColor = vec4(base + splat, 1.);
+        }
+    </script>
+    <script type="x-shader/x-fragment" id="fragShaderOutputShader">
+        precision highp float;
+        precision highp sampler2D;
+    
+        varying vec2 vUv;
+        uniform sampler2D u_output_texture;
+        uniform sampler2D u_text_texture;
+    
+        void main () {
+            vec3 C = texture2D(u_output_texture, vUv).rgb;
+            float text = texture2D(u_text_texture, vec2(vUv.x, 1. - vUv.y)).r;
+            float a = max(C.r, max(C.g, C.b));
+            a += 2. * text;
+              C += .01 * a;
+              a = max(a, 2.); // no idea why I need this one for codepen render
+            gl_FragColor = vec4(vec3(1.) - C, a);
+        }
+    </script>
+    
+    <script type="module" src="satellite/js/intro.js"></script>
+</body>
+</html>
