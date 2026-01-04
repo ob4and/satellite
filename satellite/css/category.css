@@ -1,0 +1,364 @@
+/* .border {
+    border: 1px solid #f00;
+} */
+
+/* html {
+    background-color: aqua;
+} */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap {
+    width: 1920px;
+    /* max-width: 1920px; 
+    min-width: 1200px; */
+    position: relative;
+    background-color: transparent;
+}
+
+
+
+/* ---------- index ---------- */
+.index {
+    display: flex;
+    width: 1920px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    color: var(--black);
+    font-size: 18px;
+    font-weight: 500;
+    
+    position: fixed;
+    top: 500px;
+    left: calc(50% + 120px);
+    transform: translateX(-50%);
+
+    opacity: 0;
+
+    transition: all 0.3s;
+}
+
+.index svg {
+    width: 100%;
+    height: 100%;
+}
+
+.index-type:not(#index-ring) {
+    width: 70px;
+    margin-right: 10px;
+}
+#index-ring {
+    width: 60px;
+    height: 60px;
+}
+
+.index .index-symbols .index-type svg {
+    overflow: visible;
+}
+.index .index-symbols .index-type svg path {
+  stroke-width: 10px !important;
+}
+
+.index .slash {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.index-symbols {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.index-category-g > div {
+    display: none;
+    width: 70px;
+}
+
+
+
+/* ---------- category-g ---------- */
+.category-g {
+    position: absolute;
+    top: 195.62px;
+    left: 20px;   
+}
+
+.category-g .category-symbol {
+    position: absolute;
+    top: 70px;
+    left: 0;
+}
+
+.category-g .category {
+    display: inline-flex;
+    align-items: center;
+    gap: 26px;
+    cursor: pointer;
+}
+
+.category-g .category .en {
+    opacity: 0.1;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.category-g .category svg {
+    opacity: 0;
+}
+
+.category-g .underline .en {
+    opacity: 1;
+    color: var(--black);
+    font-size: 32px;
+    text-decoration-line: underline;
+}
+
+.category-g .underline svg {
+    opacity: 1;
+}
+
+.category-g .allc {
+    position: absolute;
+    top: 0.62px;
+    left: 221.66px;
+    transform: rotate(-40deg);
+}
+
+.category-g .earrings {
+    position: absolute;
+    left: 254.54px;
+    top: 49.07px;
+    transform: rotate(-20deg);
+}
+
+.category-g .piercings {
+    position: absolute;
+    left: 270px;
+    top: 133px;
+}
+
+.category-g .necklaces {
+    position: absolute;
+    left: 252.9px;
+    top: 226.72px;
+    transform: rotate(20deg);
+}
+
+.category-g .bracelets {
+    position: absolute;
+    left: 209.61px;
+    top: 296.72px;
+    transform: rotate(40deg);
+}
+
+.category-g .rings {
+    position: absolute;
+    left: 157.44px;
+    top: 326.83px;
+    transform: rotate(60deg);
+}
+.category-g .etc {
+    position: absolute;
+    left: 96.21px;
+    top: 329.53px;
+    transform: rotate(80deg);
+}
+
+
+
+/* ---------- type-g ---------- */
+.card-section .type-g {
+    display: flex;
+    width: 1060px;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin-bottom: 60px;
+}
+
+.card-section .type-g .type {
+    opacity: 0.15;
+    font-family: "Pretendard JP";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    cursor: pointer;
+}
+
+
+
+/* option-g */
+.option-g {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    padding-left: 810px;
+}
+
+.option-g .option {
+    display: flex;
+    padding: 4px 28px;
+    align-items: center;
+    gap: 14px;
+    border-radius: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+
+    color: var(--black);
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 40px;
+}
+
+
+
+/* ---------- card-group ---------- */
+.card-section {
+    margin-top: 339px;
+    margin-left: 610px;
+}
+
+.card-group {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    row-gap: 260px;
+    margin-bottom: 600px;
+}
+
+.card-section .card-group .category-icon {
+    margin-right: 140px;
+    width: 580px;
+    z-index: -5;
+}
+
+.card-section .card-group .card {
+    width: 340px;
+    margin-right: 20px;
+    display: none;
+}
+
+
+.card-section .card-group .card-img {
+    width: 340px;
+    height: 476px;
+    position: relative;
+}
+
+.card-section .card-group .card-img .heart {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    flex-direction: column;
+    z-index: 5;
+    mix-blend-mode: difference;
+}
+.heart svg {
+    width: 30px;
+    height: 25px;
+}
+
+.card-section .card-group .card-img img {
+    width: 340px;
+    height: 476px;
+    object-fit: cover;
+}
+
+.card-section .card-group .card-brand {
+    display: flex;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 22px 0 10px;
+}
+
+.card-section .card-group .card-des {
+    width: 340px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-section .card-group .card-des .card-title {
+    width: 220px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.card-section .card-group .card-des .card-price {
+    color: var(--black);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+
+/* ---------- event ---------- */
+.card-section .card-group .select {
+    display: block;
+}
+.card-section .type-g .select {
+    opacity: 1;
+    color: var(--black);
+    text-decoration-line: underline;
+}
+
+.category-g .category:hover * {
+    transition: all 0.3s;
+}
+.category-g .category:hover svg {
+    opacity: 1;
+}
+.category-g .category:hover svg circle {
+    fill: var(--blue);
+}
+.category-g .category:hover .en {
+    opacity: 1;
+    color: var(--blue);
+    text-decoration-line: underline;
+}
+
+.card-section .type:hover {
+    transition: all 0.3s;
+    opacity: 1;
+    color: var(--blue);
+    text-decoration-line: underline;
+}
+
+body.index-visible .index {
+    opacity: 1;
+}
+
+.index-category-g > .in-active{ display: flex; }
+
+.card-section .type-g .in-select {
+  opacity: 1;
+  color: var(--black);
+  text-decoration-line: underline;
+}
+
+.card-brand:hover,
+.card-des:hover * {
+    color: var(--blue) !important;
+    transition: all 0.3s;
+}
+
+.option:hover * {
+    color: var(--blue);
+    stroke: var(--blue);
+}

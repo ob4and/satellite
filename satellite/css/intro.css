@@ -1,0 +1,93 @@
+body, html {
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+
+
+/* ---------- canvas ---------- */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.lil-gui {
+    pointer-events: none;
+    opacity: 0;
+}
+
+
+
+/* ---------- loading ---------- */
+.loading-bar {
+    z-index: 2;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0.8vh;
+    background-color: #00f;
+    animation-duration: 5s;
+    animation-timing-function: cubic-bezier(.48,0,.99,.67);
+    animation-name: loading-bar;
+    animation-fill-mode: forwards;
+}
+
+@keyframes loading-bar {
+    from {
+        width: 0;
+    }
+  
+    to {
+      width: 100%;
+    }
+}
+
+.loding, .enter {
+    font-size: 4vh;
+    color: black;
+    z-index: 3;
+    position: fixed;
+    bottom: 13vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 500;
+    animation-name: loading-text;
+    animation-duration: 1s;
+    animation-iteration-count: 3;
+    animation-fill-mode: forwards;
+}
+
+@keyframes loading-text {
+    from {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.enter {
+    animation-name: enter;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+    animation-delay: 3.5s;
+    opacity: 0;
+}
+@keyframes enter {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
