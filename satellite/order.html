@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+    
+    <title>satellite</title>
+    
+    <link rel="icon" href="img/satellite_symbol.svg" type="image/x-icon">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/warning.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/order.css">
+</head>
+<body>
+    <!-- header -->
+    <header class="en border">
+        <div class="header-bg" aria-hidden="true"></div>
+        
+        <a href="main.html" id="home">
+            <svg id="symbol" width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+                <path d="M55.1289 130.963C42.7022 130.963 32.9837 126.45 27.763 118.258C24.8593 113.701 23.4311 108.237 23.5141 102.015C23.5911 96.0681 25.0548 89.7244 27.8637 83.1348C60.6311 88.0474 70.72 96.7733 76.0711 127.247C76.4 127.138 76.7259 127.022 77.0548 126.907C79.5733 126.018 82.077 124.999 84.563 123.852C89.8844 97.1141 99.8667 88.483 128.803 83.6622C129.659 82.1215 130.456 80.5659 131.185 78.9985C131.517 78.2844 131.834 77.5733 132.136 76.8652C99.3689 71.9526 89.28 63.2267 83.9289 32.7526C91.197 30.2874 98.24 29.037 104.871 29.037C117.298 29.037 127.016 33.5496 132.237 41.7452C135.141 46.3022 136.569 51.7659 136.486 57.9852C136.409 63.9319 134.945 70.2756 132.136 76.8652C132.93 76.9837 133.739 77.0993 134.56 77.2148C146.243 49.0548 133.393 26.6667 104.871 26.6667C97.9467 26.6667 90.717 27.9852 83.5289 30.3881C82.16 21.9556 81.0993 11.9407 80 0C78.7704 13.3511 77.5882 24.2963 75.9733 33.3126C56.4178 41.917 38.1007 58.0593 28.2519 76.8059C20.2756 78.0148 10.9452 78.9926 0 80C9.68593 80.8918 18.1037 81.76 25.44 82.7852C13.757 110.945 26.6074 133.333 55.1289 133.333C62.0533 133.333 69.283 132.015 76.4711 129.612C76.3407 128.809 76.2074 128.021 76.0711 127.247C68.803 129.716 61.76 130.963 55.1289 130.963ZM61.2089 44.2459C65.84 41.0874 70.6044 38.3793 75.437 36.1481C70.1156 62.8859 60.1333 71.517 31.197 76.3378C37.917 64.2311 48.4148 52.9719 61.2089 44.2459Z" />
+                <path d="M98.7911 115.754C94.16 118.913 89.3955 121.624 84.563 123.852C84.3793 124.776 84.2015 125.721 84.0267 126.687C103.582 118.083 121.899 101.941 131.748 83.1941C130.744 83.3452 129.763 83.5022 128.803 83.6622C122.083 95.7718 111.585 107.028 98.7911 115.754Z" />
+                <path d="M80 160C81.2296 146.649 82.4118 135.704 84.0267 126.687C81.523 127.793 78.9985 128.77 76.4711 129.612C77.84 138.044 78.9007 148.059 80 160Z" />
+                <path d="M134.56 77.2148C134.178 78.1363 133.769 79.0667 133.333 80C132.833 81.0726 132.305 82.1363 131.748 83.1941C139.724 81.9852 149.055 81.0074 160 80C150.314 79.1081 141.896 78.24 134.56 77.2148Z" />
+                <path d="M139.778 14.1955C141.399 12.5748 144.027 12.5778 145.653 14.2044C149.399 18.2607 143.84 23.8163 139.787 20.0711C138.163 18.4474 138.16 15.8163 139.778 14.1955Z" />
+            </svg>
+        </a>
+      
+        <div class="inner">
+            <div class="menu-center">
+              <a href="rangking.html">rangking</a>
+              <a href="category.html">category</a>
+              <a href="#none" class="search-btn">search</a>
+          </div>
+          <div class="menu-right">
+              <a href="order.html">cart (<span id="cart-count">3</span>)</a>
+              <a href="login.html">login</a>
+          </div>
+        </div>
+    </header>
+
+    <!-- search -->
+    <div class="search">
+        <!-- searchBox -->
+        <div class="border searchBox">
+            <input type="text" id="search" class="kr" placeholder="찾고 싶은 주얼리를 검색 해보세요." />
+            <div class="border search-icon warning img-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 26 27" fill="none">
+                  <path d="M11.1538 21.8077C16.7617 21.8077 21.3077 17.2617 21.3077 11.6538C21.3077 6.04602 16.7617 1.5 11.1538 1.5C5.54602 1.5 1 6.04602 1 11.6538C1 17.2617 5.54602 21.8077 11.1538 21.8077Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M25.0001 25.5L18.5386 19.0385" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="word-push">    
+            <div class="word-group">
+                <div class="word-title">
+                    <p class="kr">최근 검색어</p>
+                    <a href="#none" class="kr" id="alldelete">전체 삭제</a>
+                </div>
+                
+                <div class="word">
+                    <a href="#none" class="en">satellite ribbon necklace</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                        <line y1="-0.75" x2="16.9706" y2="-0.75" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 14 14)" stroke="black" stroke-width="2"/>
+                        <line x1="1.46967" y1="13.4697" x2="13.4697" y2="1.46967" stroke="black" stroke-width="2"/>
+                    </svg>
+                </div>
+                
+                <div class="word">
+                    <a href="#none"  class="en">satellite bracelet</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                        <line y1="-0.75" x2="16.9706" y2="-0.75" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 14 14)" stroke="black" stroke-width="2"/>
+                        <line x1="1.46967" y1="13.4697" x2="13.4697" y2="1.46967" stroke="black" stroke-width="2"/>
+                    </svg>
+                </div>
+                
+                <div class="word">
+                    <a href="#none" class="en">t★gether, to get work! case</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                        <line y1="-0.75" x2="16.9706" y2="-0.75" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 14 14)" stroke="black" stroke-width="2"/>
+                        <line x1="1.46967" y1="13.4697" x2="13.4697" y2="1.46967" stroke="black" stroke-width="2"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="push">
+                <p class="kr">추천 제품</p>
+
+                <div class="card">
+                    <div class="card-img">                        
+                        <a href="#none" class="img-box">
+                            <img src="img/피어싱1.jpg" alt="제품 사진">
+                        </a>
+
+                        <div class="heart img-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 30 25" fill="none">
+                                <path d="M14.6485 5.0065L15 5.35388L15.3515 5.0065L17.9251 2.46286C20.573 -0.154263 24.8685 -0.154308 27.5165 2.46286C30.1612 5.07681 30.1612 9.31228 27.5165 11.9262L15 24.297L2.48353 11.9262C-0.1612 9.31223 -0.161153 5.07676 2.48353 2.46286C5.13146 -0.154263 9.42695 -0.154308 12.0749 2.46286L14.6485 5.0065Z" stroke="white"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <a href="#none" class="card-brand kr">토우스트</a>
+    
+                    <a href="#none" class="card-des">
+                        <p class="card-title kr">Strawberry Piercing</p>
+                        <p class="card-price en">39,000원</p>
+                    </a>
+                </div>
+
+                <div class="card casual">
+                    <div class="card-img">                        
+                        <a href="#none" class="img-box">
+                            <img src="img/반지19.jpg" alt="제품 사진">
+                        </a>
+
+                        <div class="heart img-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 30 25" fill="none">
+                                <path d="M14.6485 5.0065L15 5.35388L15.3515 5.0065L17.9251 2.46286C20.573 -0.154263 24.8685 -0.154308 27.5165 2.46286C30.1612 5.07681 30.1612 9.31228 27.5165 11.9262L15 24.297L2.48353 11.9262C-0.1612 9.31223 -0.161153 5.07676 2.48353 2.46286C5.13146 -0.154263 9.42695 -0.154308 12.0749 2.46286L14.6485 5.0065Z" stroke="white"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <a href="#none" class="card-brand kr">논논</a>
+    
+                    <a href="#none" class="card-des">
+                        <p class="card-title kr">[태연,블랙핑크 로제,뉴진스 다니엘 착용] BLACK LOVE RNG</p>
+                        <p class="card-price en">129,000원</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- warning-modal -->
+    <div class="warning-modal">
+        <p class="kr">
+            이 페이지는 <span>포트폴리오용 데모 버전</span>으로,<br>
+            현재는 해당 기능이 제공되지 않습니다.
+        </p>
+    </div>
+    
+    <div class="wrap">
+        <div class="inner">
+            <section class="order">
+                <div class="step">
+                    <pre class="en">01  cart</pre>
+    
+                    <div class="img-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="49" viewBox="0 0 20 35" fill="none">
+                            <path d="M1.75 1.5L17.75 17.5L1.75 33.5" stroke="black" stroke-opacity="0.15" stroke-width="3"/>
+                        </svg>
+                    </div>
+                    
+                    <pre class="en">02  order</pre>
+                    
+                    <div class="img-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="49" viewBox="0 0 20 35" fill="none">
+                            <path d="M1.75 1.5L17.75 17.5L1.75 33.5" stroke="black" stroke-opacity="0.15" stroke-width="3"/>
+                        </svg>
+                    </div>
+                    
+                    <pre class="en">03  order completed</pre>
+                </div>
+    
+                <div class="option">
+                    <div class="check_wrap">
+                        <input type="checkbox" id="check_btn"/>
+                        <label for="check_btn" id="check_label"><span>전체 선택</span></label>
+                    </div>
+                    
+                    <div class="delet">
+                        <p class="en">선택 삭제</p>
+                        <p class="en">품절 삭제</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="check_wrap">
+                        <input type="checkbox" id="checkbtn"/>
+                        <label for="checkbtn" id="checklabel"><span></span></label>
+                    </div>
+    
+                    <div class="card-img">                        
+                        <a href="javascript:void(0)" class="img-box">
+                            <img src="img/반지1.jpg" alt="제품 사진">
+                        </a>
+                    </div>
+    
+                    <div class="card-des-group">
+                        <div class="card-des">
+                            <div class="brand-title">
+                                <a href="javascript:void(0)" class="card-brand en">므아르</a>
+                                <a href="javascript:void(0)" class="card-title en">Twinkle Twinkle ring 트윙클 링 (실버925)</a>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                <path d="M0.999756 1L20.9998 20.2824M20.9998 1.71762L0.999756 21" stroke="black" stroke-width="2"/>
+                              </svg>
+                        </div>
+    
+                        <div class="card-price en">
+                            <p class="en cost">49,000원</p>
+                            <p class="en sale">10%</p>
+                            <p class="en price">44,100원</p>
+                        </div>
+    
+                        <a href="javascript:void(0)" class="en card-option">11호</a>
+    
+                        <div class="en card-change">
+                            <a href="javascript:void(0)" class="en warning">옵션 변경</a>
+                            <a href="javascript:void(0)" class="en warning">바로 구매 하기</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div class="check_wrap">
+                        <input type="checkbox" id="checkbtn2"/>
+                        <label for="checkbtn2" id="checklabel2"><span></span></label>
+                    </div>
+    
+                    <div class="card-img">                        
+                        <a href="javascript:void(0)" class="img-box">
+                            <img src="img/피어싱1.jpg" alt="제품 사진">
+                        </a>
+                    </div>
+    
+                    <div class="card-des-group">
+                        <div class="card-des">
+                            <div class="brand-title">
+                                <a href="javascript:void(0)" class="card-brand en">토우스트</a>
+                                <a href="javascript:void(0)" class="card-title en">Strawberry Piercing</a>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                <path d="M0.999756 1L20.9998 20.2824M20.9998 1.71762L0.999756 21" stroke="black" stroke-width="2"/>
+                              </svg>
+                        </div>
+    
+                        <div class="card-price en">
+                            <p class="en price">39,000원</p>
+                        </div>
+    
+                        <a href="javascript:void(0)" class="en card-option">silver-8mm</a>
+    
+                        <div class="en card-change">
+                            <a href="javascript:void(0)"  class="en warning">옵션 변경</a>
+                            <a href="javascript:void(0)"  class="en warning">바로 구매 하기</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div class="check_wrap">
+                        <input type="checkbox" id="checkbtn3"/>
+                        <label for="checkbtn3" id="checklabel3"><span></span></label>
+                    </div>
+    
+                    <div class="card-img">                        
+                        <a href="javascript:void(0)" class="img-box">
+                            <img src="img/피어싱3.jpg" alt="제품 사진">
+                        </a>
+                    </div>
+    
+                    <div class="card-des-group">
+                        <div class="card-des">
+                            <div class="brand-title">
+                                <a href="javascript:void(0)" class="card-brand en">메타믹</a>
+                                <a href="javascript:void(0)" class="card-title en">Pretzel Heart Piercing</a>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                <path d="M0.999756 1L20.9998 20.2824M20.9998 1.71762L0.999756 21" stroke="black" stroke-width="2"/>
+                              </svg>
+                        </div>
+    
+                        <div class="card-price en">
+                            <p class="en price">35,000원</p>
+                        </div>
+    
+                        <a href="javascript:void(0)"  class="en card-option">-</a>
+    
+                        <div class="en card-change">
+                            <a href="javascript:void(0)" class="en warning">옵션 변경</a>
+                            <a href="javascript:void(0)" class="en warning">바로 구매 하기</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="pay">
+                <div class="pay-title">
+                    <p class="en">총 금액</p>
+                    <p class="en"></p>
+                </div>
+        
+                <div class="pay-des">
+                    <p class="en">상품 금액</p>
+                    <p class="en"></p>
+        
+                    <p class="en">할인 금액</p>
+                    <p class="en"></p>
+        
+                    <p class="en">배송비</p>
+                    <p class="en"></p>
+                </div>
+        
+                <p class="order-btn warning">0개 구매하기</p>
+            </section>
+        </div>
+
+        <!-- footer -->
+        <footer class="border kr">            
+            <div class="border inner">
+                <div class="border text-group">
+                    <div class="border cs">
+                        <p class="en">CS CENTER</p>
+    
+                        <div>
+                            <div>
+                                <a>
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                    
+                                    <p>1588-1940</p>
+                                </a>
+                                
+                                <a>
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    
+                                    <p>satellite@gmail.com</p>
+                                </a>
+                                
+                                <p>*영업 평일 오전 9시~오후 4시</p>
+                            </div>
+    
+                            <div>
+                                <a href="#none">
+                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                </a>
+    
+                                <a href="#none" class="img-box">
+                                    <img src="img/X_logo.svg" alt="X">
+                                </a>
+    
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="border info">
+                        <div>
+                            <a href="#none">입점문의</a>
+                            <a href="#none">제휴문의</a>
+                            <a href="#none">공지사항</a>
+                        </div>
+                        
+                        <div>
+                            <p>(31080) 충청남도 천안시 서북구 천안대로 1223-24 제 10공학관 1층, (주) 새틀릿</p>
+                            <p>대표 이사 : 임사랑</p>
+                            <p>사업자등록번호 : 012-34-56789</p>
+                            <a href="">사업자정보 확인</a>
+                            <p>통신판매업신고 : 제 1234-가나다라-5678 호</p>
+                        </div>
+    
+                        <p>
+                            <span>법적고지</span> <br>
+                            (주) 새틀릿은 결제정보의 중개서비스 또는 통신판매중개시스템의 제공자로서, 통신판매의 당사자가 아니며, <br>
+                            상품의 주문, 배송 및 환불 등과 관련한 의무와 책임이 각 판매자에게 1차로 있습니다.
+                        </p>
+                    </div>
+                </div>
+                
+                <a href="#none">
+                    <img src="img/satellite_logo.svg" alt="새틀릿 로고">
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/order.js"></script>
+    <script src="js/heart.js"></script>
+    <script src="js/warning.js"></script>
+    <script src="js/header.js"></script>
+</body>
+</body>
+</html>
