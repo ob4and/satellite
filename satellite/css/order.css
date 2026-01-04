@@ -1,0 +1,444 @@
+/* .border {
+    border: 1px solid #f00;
+} */
+
+/* html {
+    background-color: aqua;
+} */
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap {
+    width: 1920px;
+    /* max-width: 1920px; 
+    min-width: 1200px; */
+    position: relative;
+    background-color: transparent;
+}
+
+section {
+    margin-bottom: 400px;
+}
+
+.order {
+    width: 940px;
+}
+
+.wrap > .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 280px 250px 0 250px;
+}
+
+
+
+/* ---------- step ---------- */
+.order .step {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 260px;
+}
+
+.step pre {
+    opacity: 0.15;
+    font-size: 60px;
+    font-weight: 400;
+}
+.step pre:nth-child(1) {
+    color: var(--blue);
+    font-weight: 400;
+    opacity: 1;
+    text-decoration-line: underline;
+}
+
+
+
+/* ---------- option ---------- */
+.option {
+    width: 940px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-self: stretch;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.check_wrap {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+#check_btn, #check_btn2 {
+    width: 16px;
+    height: 16px;
+}
+.check_wrap span {
+    line-height: 130%;
+}
+
+
+.delet {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.delet .en {
+    color: var(--black);
+    opacity: 0.3;
+    line-height: 130%;
+}
+
+
+
+/* ---------- card ---------- */
+.order .card {
+    display: flex;
+    width: 940px;
+    padding: 40px 0px;
+    align-items: flex-start;
+    gap: 40px;
+
+    border-top: 1px solid #D9D9D9;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.order .card-img .img-box img {
+    width: 170px;
+    height: 238px;
+    object-fit : cover;
+}
+
+.order .card-des-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    align-self: stretch;
+}
+
+.order .card-des {
+    width: 100%;
+    display: flex;
+    font-size: 18px;
+    justify-content: space-between;
+    margin-bottom: 48px;
+}
+
+.order .card-des .brand-title {
+    display: flex;
+    gap: 24px;
+    font-size: 20px;
+}
+.order .card-des .card-brand {
+    font-weight: 700;
+}
+.order .card-des .card-title {
+    width: 400px;
+    font-weight: 400;
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-transform: capitalize;
+    margin-right: 18px;
+}
+
+.order .card-price { 
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+.order .card-price .cost {
+    text-align: right;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: line-through;
+    margin: 5px 12px 0 0;
+}
+.order .card-price .sale {
+    text-align: right;
+    color: var(--blue);
+    font-size: 18px;
+    font-weight: 700;
+    margin: 5px 24px 0 0;
+}
+.order .card-price .price {
+    text-align: right;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 130%; /* 36.4px */
+    text-transform: capitalize;
+}
+
+.order .card-option {
+    color: var(--black);
+    opacity: 0.4;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.card .card-change {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+
+
+/* ---------- pay ---------- */
+.pay {
+    position: sticky;
+    top: 300px;
+    z-index: 10;
+    display: flex;
+    width: 340px;
+    margin-top: 396px;
+    padding: 40px 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 70px;
+    background-color: var(--black);
+    /* border-radius: 24px; */
+}
+
+.pay-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pay-title .en {
+    color: var(--white);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.pay-des{
+  display: grid;
+  grid-template-columns: 1fr auto; 
+  column-gap: 60px;
+  row-gap: 14px;
+  width: 100%;
+  align-items: center;
+}
+
+.pay-des .en{
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 1;
+  margin: 0;
+}
+
+.pay-des .en:nth-child(2n){
+  justify-self: end;
+  text-align: right;
+}
+
+.pay, .pay *{
+  font-variant-numeric: tabular-nums; 
+  font-feature-settings: "tnum" 1;
+}
+
+.order-btn {
+    display: flex;
+    padding: 13px 0px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+
+    border-radius: 100px;
+    background: var(--white);
+
+    font-size: 22px;
+    font-weight: 700;
+
+    transition: all 0.3s;
+}
+
+.order-btn:hover {
+    color: var(--white);
+    background-color: var(--blue);
+}
+
+
+
+/* ---------- check_btn ---------- */
+#check_btn{
+    display:none;
+}
+#check_btn + #check_label > span{
+    vertical-align: middle;
+    padding-left: 5px;
+}
+#check_btn + #check_label:before{
+    content:"";
+    display:inline-block;
+    width:16px;
+    height:16px;
+    border: 1.5px solid var(--black);
+    vertical-align:middle;
+    margin-right: 40px;
+}
+#check_btn:checked + #check_label:before{
+    background-color: var(--black);
+    border-color: var(--black);
+}
+
+
+#checkbtn {
+    display:none;
+}
+#checkbtn + #checklabel > span{
+    vertical-align: middle;
+    padding-left: 5px;
+}
+#checkbtn + #checklabel:before{
+    content:"";
+    display:inline-block;
+    width:16px;
+    height:16px;
+    border: 1.5px solid var(--black);
+    vertical-align:middle;
+}
+#checkbtn:checked + #checklabel:before{
+    background-color: var(--black);
+    border-color: var(--black);
+}
+
+#checkbtn2 {
+    display:none;
+}
+#checkbtn2 + #checklabel2 > span{
+    vertical-align: middle;
+    padding-left: 5px;
+}
+#checkbtn2 + #checklabel2:before{
+    content:"";
+    display:inline-block;
+    width:16px;
+    height:16px;
+    border: 1.5px solid var(--black);
+    vertical-align:middle;
+}
+#checkbtn2:checked + #checklabel2:before{
+    background-color: var(--black);
+    border-color: var(--black);
+}
+
+#checkbtn3 {
+    display:none;
+}
+#checkbtn3 + #checklabel3 > span{
+    vertical-align: middle;
+    padding-left: 5px;
+}
+#checkbtn3 + #checklabel3:before{
+    content:"";
+    display:inline-block;
+    width:16px;
+    height:16px;
+    border: 1.5px solid var(--black);
+    vertical-align:middle;
+}
+#checkbtn3:checked + #checklabel3:before{
+    background-color: var(--black);
+    border-color: var(--black);
+}
+
+
+
+/* ---------- event ---------- */
+:where(.delet p, .order-btn),
+#check_bt, #check_label,
+#checkbtn, #checklabel,
+#checkbtn2, #checklabel2,
+.card-des svg {
+    cursor: pointer;
+}
+
+:where(.card.removing){
+    opacity: 0;
+    /* transition: all 0.3s; */
+}
+
+.card .brand-title a,
+.card .card-option,
+.card .card-change a {
+    color: var(--black) !important;
+    transition: all 0.3s;
+}
+
+.card .card-des:hover .brand-title a:not(:hover),
+.card .card-des:hover .card-option:not(:hover),
+.card .card-des:hover .card-change a:not(:hover) {
+    color: var(--black) !important;
+}
+
+.delet p:hover,
+.card .brand-title a:hover,
+.card .card-option:hover,
+.card .card-change a:hover {
+    color: var(--blue) !important;
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+.card .card-des svg {
+    color: var(--black) !important;
+}
+.card .card-des svg:hover {
+    color: var(--blue) !important;
+}
+.card .card-des svg path {
+    stroke: var(--black);
+    transition: all .3s ease;
+}
+.card .card-des svg:hover path {
+    stroke: var(--blue);
+}
+
+#check_btn:hover + #check_label:before {
+    border-color: var(--blue);
+    transition: all 0.3s;
+}
+
+#check_btn:checked:hover + #check_label:before {
+    background-color: var(--blue);
+    border-color: var(--blue);
+    transition: all 0.3s;
+}
+
+#checkbtn:hover + #checklabel:before,
+#checkbtn2:hover + #checklabel2:before,
+#checkbtn3:hover + #checklabel3:before {
+    border-color: var(--blue);
+    transition: all 0.3s;
+}
+
+#checkbtn:checked:hover + #checklabel:before,
+#checkbtn2:checked:hover + #checklabel2:before,
+#checkbtn3:checked:hover + #checklabel3:before {
+    background-color: var(--blue);
+    border-color: var(--blue);
+    transition: all 0.3s;
+}

@@ -1,0 +1,272 @@
+/* .border {
+    border: 1px solid #f00;
+} */
+
+/* html {
+    background-color: aqua;
+} */
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap {
+    width: 1920px;
+    /* max-width: 1920px; 
+    min-width: 1200px; */
+    position: relative;
+    background-color: transparent;
+}
+
+
+
+/* ---------- title-section ---------- */
+.title-section {
+    width: 100%;
+    position: relative;
+    height: auto;
+    padding: 0 130px;
+    margin: 436px 0 200px;
+}
+.title-section .title-g {
+    align-items: center;
+    display: inline-flex;
+    align-items: start;
+    gap: 90px;
+}
+
+.title-section .en {
+    font-size: 80px;
+    font-weight: 400;
+}
+
+.title-section .option-g {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px;
+    justify-content: center;
+    align-items: start;
+    gap: 100px;
+}
+
+.title-section .option {
+    display: flex;
+    padding: 0px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    border-bottom: 6px solid var(--black);
+}
+
+.title-section .types {
+    display: none;
+}
+
+
+
+/* ---------- category-section ---------- */
+.category-section .category-gg {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 260px;
+    padding-right: 130px;
+}
+.category-section .category-g {
+    display: flex;
+    width: 1402px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+}
+
+.category-section .category {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.category-section .category .kr {
+    text-align: right;
+    font-size: 20px;
+    font-weight: 700;
+    opacity: 0;
+}
+
+.category-section .category .en {
+    font-size: 80px;
+    font-weight: 400;
+    opacity: 0.1;
+}
+
+
+
+/* ---------- card-section ---------- */
+.card-section {
+    padding: 0 230px 0 250px;
+}
+
+.card-group {
+    width: 100%;
+    display: none;
+    justify-content: start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    row-gap: 260px;
+    margin-bottom: 600px;
+}
+
+.card-section .card-group .category-icon {
+    margin-right: 140px;
+    width: 580px;
+    z-index: -5;
+}
+
+#all, #etc {
+    opacity: 0;
+}
+
+#ring {
+    width: 340px;
+    margin-right: 380px;
+}
+
+.card-section .card-group .card {
+    width: 340px;
+    margin-right: 20px;
+}
+
+.card-section .card-group .card-img {
+    width: 340px;
+    height: 476px;
+    position: relative;
+}
+
+.card-section .card-group .card-img .ranking-num {
+    padding: 4px 26px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+
+    background-color: var(--black);
+    color: white;
+}
+
+.card-section .card-group .card-img .heart {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    flex-direction: column;
+    z-index: 5;
+    mix-blend-mode: difference;
+}
+.heart svg {
+    width: 30px;
+    height: 25px;
+}
+
+.card-section .card-group .card-img img {
+    width: 340px;
+    height: 476px;
+    object-fit: cover;
+}
+
+.card-section .card-group .card-brand {
+    display: flex;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 22px 0 10px;
+}
+
+.card-section .card-group .card-des {
+    width: 340px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-section .card-group .card-des .card-title {
+    width: 210px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.card-section .card-group .card-des .card-price {
+    color: var(--black);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* ---------- event ---------- */
+.option.items:hover * {
+    color: var(--blue);
+    stroke: var(--blue);
+    transition: all 0.3s;
+}
+.option.items:hover {
+    border-bottom: 6px solid var(--blue);
+    transition: all 0.3s;
+}
+
+.option.types:hover * {
+    color: var(--blue);
+    stroke: var(--blue);
+    transition: all 0.3s;
+}
+.option.types:hover {
+    border-bottom: 6px solid var(--blue);
+    transition: all 0.3s;
+}
+
+.category-section .category:hover .kr,
+.category-section .category:hover .en {
+    opacity: 1;
+    color: var(--blue);
+    transition: all 0.3s ease;
+}
+
+.category-section .category.is-active .kr,
+.category-section .category.is-active .en {
+    opacity: 1;
+    color: var(--black);
+}
+.category-section .category.is-active .en {
+text-decoration-line: underline;
+}
+
+.category-section .category:hover .kr,
+.category-section .category:hover .en {
+    opacity: 1;
+    color: var(--blue);
+}
+.category-section .category:hover .en {
+text-decoration-line: underline;
+}
+
+.card-group.is-active {
+    display: flex;
+}
+
+.card-brand:hover,
+.card-des:hover * {
+    color: var(--blue) !important;
+    transition: all 0.3s;
+}
