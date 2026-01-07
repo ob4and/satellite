@@ -107,7 +107,6 @@ body {
 .category-g .category .en {
     opacity: 0.1;
     font-size: 32px;
-    font-weight: 500;
 }
 
 .category-g .category svg {
@@ -188,7 +187,6 @@ body {
     opacity: 0.15;
     
     font-size: 24px;
-    font-weight: 500;
     cursor: pointer;
 }
 
