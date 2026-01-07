@@ -186,11 +186,9 @@ body {
 
 .card-section .type-g .type {
     opacity: 0.15;
-    font-family: "Pretendard JP";
+    
     font-size: 24px;
-    font-style: normal;
     font-weight: 500;
-    line-height: 130%;
     cursor: pointer;
 }
 
