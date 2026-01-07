@@ -1,4 +1,4 @@
-# satellite  
+# satellite 💍
 **Jewelry Personal Styling & Online Select Shop**
 
 ## Overview
