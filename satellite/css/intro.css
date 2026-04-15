@@ -48,7 +48,7 @@ canvas {
 }
 
 .loding, .enter {
-    font-size: 4vh;
+    font-size: 3.5vh;
     color: black;
     z-index: 3;
     position: fixed;
@@ -91,7 +91,3 @@ canvas {
         opacity: 1;
     }
 }
-
-
-
-/* ---------- Responsive ---------- */

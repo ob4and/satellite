@@ -19,11 +19,16 @@ const fontOptions = {
 const params = {
     fontName: "Pretendard",
     isBold: false,
-    fontSize: 120,
+    fontSize: 140,
     text: "find your satellite",
     pointerSize: null,
     color: {r: 0, g: 0, b: 1}
 }
+
+const vwFontSize = Math.max(
+    40, // 최소
+    Math.min(window.innerWidth * 0.115, 160) // 최대
+);
 
 const pointer = {
     x: 0,
@@ -86,14 +91,29 @@ function updateTextCanvas() {
     textureCtx.fillStyle = "black";
     textureCtx.fillRect(0, 0, textureEl.width, textureEl.height);
 
-    textureCtx.font = (params.isBold ? "bold" : "normal") + " " + (params.fontSize * devicePixelRatio) + "px " + fontOptions[params.fontName];
+    // ✅ vw처럼 동작하는 반응형 폰트 크기
+    const responsiveFontSize = Math.max(
+        40, // 최소값
+        Math.min(window.innerWidth * 0.115, 160) // 8vw, 최대값 160
+    );
+
+    textureCtx.font =
+        (params.isBold ? "bold" : "normal") +
+        " " +
+        responsiveFontSize +
+        "px " +
+        fontOptions[params.fontName];
+    
     textureCtx.fillStyle = "#ffffff";
     textureCtx.textAlign = "center";
-
     textureCtx.filter = "blur(3px)";
 
     const textBox = textureCtx.measureText(params.text);
-    textureCtx.fillText(params.text, .5 * textureEl.width, .5 * textureEl.height + .5 * textBox.actualBoundingBoxAscent);
+    textureCtx.fillText(
+        params.text,
+        0.5 * textureEl.width,
+        0.5 * textureEl.height + 0.5 * textBox.actualBoundingBoxAscent
+    );
 
     gl.activeTexture(gl.TEXTURE0);
     gl.bindTexture(gl.TEXTURE_2D, canvasTexture);
@@ -339,10 +359,10 @@ function createControls() {
     gui
         .add(params, "text")
         .onChange(updateTextCanvas);
-    gui
-        .add(params, "fontSize", 10, 300)
-        .onChange(updateTextCanvas)
-        .name("font size, px");
+    // gui
+    //     .add(params, "fontSize", 10, 300)
+    //     .onChange(updateTextCanvas)
+    //     .name("font size, px");
     gui
         .add(params, "isBold")
         .onChange(updateTextCanvas)
